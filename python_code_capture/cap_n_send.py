@@ -5,7 +5,7 @@ from datetime import datetime
 import os
 
 #take pictures
-exec(open('capture.py').read())
+exec(open('capture_v2.py').read())
 
 #login to server
 server = ('143.106.75.73')
