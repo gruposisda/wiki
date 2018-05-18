@@ -19,13 +19,13 @@ camera.contrast = 0
 camera.brightness = 50
 camera.saturation = 0
 
-img_base_name = './out/image_{}{}_g{}_{}.jpg'
+img_base_name = './out/image_{}-{}.jpg'
 
-def cap_images(exposure_mode,name,gain,n=3):
+def cap_images(exposure_mode,name,gain,n=1):
     for i in range(n):
-        print('capturando imagem {} com ganho {}'.format(i,gain))
+        print('capturando imagem com ganho {}'.format(gain))
         sleep(0.2)
-        camera.capture(name.format(now.month,now.day,gain,i))
+        camera.capture(name.format(now.hour,now.minute))
     return;
 
 

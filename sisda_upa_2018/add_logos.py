@@ -1,16 +1,17 @@
 from PIL import Image
 
-input_image = 'tologo.jpg'
+print('Horas:')
+hour = input()
+print('Minutos:')
+minute = input()
+img_base_name = './out/image_{}-{}.jpg'
+input_image = img_base_name.format(str(hour),str(minute))
+
 
 photo = Image.open(input_image)
-logo_upa = Image.open('logos/upa.png')
-logo_upa.thumbnail((164,162),Image.ANTIALIAS)
-logo_sisda = Image.open('logos/sisda.png')
-logo_sisda.thumbnail((164,162),Image.ANTIALIAS)
-logo_feagri = Image.open('logos/feagri.png')
+logo = Image.open('logos/logos_red.png')
+photo.paste(logo,(2208,2150))
 
-photo.paste(logo_sisda,(280,2200))
-photo.paste(logo_feagri,(1780,2200))
-photo.paste(logo_upa,(3000,2200))
-
-photo.save('logoed.jpg')
+output_image = './out/image_{}-{}.'
+output_image = output_image.format(str(hour),str(minute))+'_logo.jpg'
+photo.save(output_image)
